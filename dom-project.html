@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: 'Oswald', sans-serif;
+    }
+    .header{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .title{
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 53px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .order{
+        background: #817070;
+        padding: 50px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+    .order__fio{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .order__coffee{
+        display: flex;
+        flex-direction: column;
+        margin-right: 150px;
+    }
+    .orders{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .order__food{
+        display: flex;
+        flex-direction: column;
+    }
+    input{
+        border: 3px solid #fff;
+        padding: 10px;
+        background: #817070;
+        margin: 0 10px 10px 10px;
+        color: #fff;
+        text-align: center;
+        font-size: 20px;
+        outline: none;
+    }
+    input[type="number"]{
+        width: 60px;
+        -moz-appearance: textfield;
+    }
+    input::placeholder{
+        color: #fff;
+        font-family: 'Oswald', sans-serif;
+        text-align: center;
+    }
+    label{
+        color: #fff;
+        font-size: 20px;
+    }
+    .btn{
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #817070;
+        background: #FFFFFF;
+        border: 3px solid #FFFFFF;
+        width: fit-content;
+        padding: 10px;
+        cursor: pointer;
+        font-family: 'Oswald', sans-serif;
+        text-align: right;
+        display: flex;
+        align-self: center;
+    }
+    .btn:hover{
+        color: #fff;
+        background: #817070;
+    }
+    .total{
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 26px;
+        margin: 20px;
+    }
+    .item{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        width: 300px;
+    }
+    
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    
+    .checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    .checkbox + label {
+        position: relative;
+        padding: 0 0 0 40px;
+        cursor: pointer;
+    }
+    .checkbox + label:before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 26px;
+        height: 26px;
+        background: #ebe2e2;
+    }
+    .checkbox + label:after {
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 4px;
+        width: 18px;
+        height: 18px;
+        background: #817070;
+    }
+    .checkbox:checked + label:after {
+        background: #6a4646;
+    }
+</style>
+</head>
+<body>
+    <header class="header">
+        <p class="title">COFFEE HOUSE</p>
+    </header>
+    <section class="order"> 
+        <div class="order__fio">
+            <input type="text" name="surname" placeholder="Введите Фамилию">
+            <input type="text" name="name" placeholder="Введите Имя">
+        </div>
+        
+        <div class="orders">
+            <div class="order__coffee">
+                <div class="item">
+                    <input class="checkbox" id="checkbox1" type="checkbox" name="goods" value="80" data-goods="expresso">
+                    <label for="checkbox1">Эспрессо 80р.</label>
+                    <input type="number" id="expresso" value="0">
+                </div>
+                <div class="item">
+                    <input class="checkbox" id="checkbox2" type="checkbox" name="goods" value="110" data-goods="americano">
+                    <label for="checkbox2">Американо 110р.</label>
+                    <input type="number" id="americano" value="0">
+                </div>
+                <div class="item">
+                    <input class="checkbox" id="checkbox3" type="checkbox" name="goods" value="120" data-goods="latte">
+                    <label for="checkbox3">Латте 120р.</label>
+                    <input type="number" id="latte" value="0">
+                </div>
+                <div class="item">
+                    <input class="checkbox" id="checkbox4" type="checkbox" name="goods" value="90" data-goods="capuchino">
+                    <label for="checkbox4">Капучино 90р.</label>
+                    <input type="number" id="capuchino" value="0">
+                </div>
+            </div>
+            <div class="order__food">
+                <div class="item">
+                    <input class="checkbox" id="checkbox5" type="checkbox" name="goods" value="80" data-goods="chocolate_muffin">
+                    <label for="checkbox5">Шоколадный кекс 80р.</label>
+                    <input type="number" id="chocolate_muffin" value="0">
+                </div>
+                <div class="item">
+                    <input class="checkbox" id="checkbox6" type="checkbox" name="goods" value="90" data-goods="blueberry_muffin">
+                    <label for="checkbox6">Черничный кекс 90р.</label>
+                    <input  type="number" id="blueberry_muffin" value="0">
+                </div>
+                <div class="item">
+                    <input class="checkbox" id="checkbox7" type="checkbox" name="goods" value="100" data-goods="apple_tart">
+                    <label for="checkbox7">Яблочный тарт 100р.</label>
+                    <input  type="number" id="apple_tart" value="0">
+                </div>
+            </div>
+        </div>
+        <p class="total">Итого: <span class="sum">0 р.</span></p>
+        <button class="btn">Оформить заказ</button>
+    </section>
+    <script>
+const userSurname = document.querySelector(`[name = "surname"]`); //получите элемент input с фамилией(*)
+const userName = document.querySelector(`[name = "name"]`);  //получите элемент input с именем(*)
+const goodsElements = document.querySelectorAll('[name="goods"]'); //получите элементы checkbox с товарами goods(*)
+const countElements = document.querySelectorAll('[name="count"]');  //получите элементы input с кол-вом(*)
+const btnElement = document.querySelector(".btn");//получите элемент button(*)
+const resultElement = document.querySelector(".sum");//получите элемент span для итоговой суммы
+let total = 0; //создайте переменную для хранения итоговой суммы (*)
+//этот объект нужен для хранения количества каждого товара
+//либо, вы можете создать переменные/массив для хранения значений 
+const countGoods = { 
+    "expresso": 0,
+    "americano": 0,
+    "latte": 0,
+    "capuchino": 0,
+    "chocolate_muffin": 0,
+    "blueberry_muffin": 0,
+    "apple_tart": 0
+}
+//этот объект нужен для хранения цены каждого товара
+//т.е. если товар выбран, записываем его цену, если не выбран - записываем 0
+//либо, вы можете создать переменные/массив для хранения значений
+const choicePriceGoods = { 
+    "expresso": 0,
+    "americano": 0,
+    "latte": 0,
+    "capuchino": 0,
+    "chocolate_muffin": 0,
+    "blueberry_muffin": 0,
+    "apple_tart": 0
+}
+//создайте функцию, которая будет считать итоговую сумму, подумайте над формулой.
+
+//для каждого элемента input с кол-вом нужно повесить событие на изменение change, 
+//по которому в объекте должны меняться значения на значение в input
+countElements.forEach(element => { //для каждого элемента из списка элементов checkbox.addEventListener("change", function(){  //при изменении элемента
+if(element.checked){                        //если checkbox-кнопка выбрана
+            total.push(element.value);   //добавляем значение в массив выбранных
+        } else {                                         //иначе удаляем из массива выбранных
+            total.splice(total.indexOf(element.value));
+        }
+})
+//для каждого элемента checkbox нужно повесить событие на изменение change, 
+//по которому в объекте должны меняться значение на цену, если чекбокс выбран
+//или обратно на 0, если чекбокс не выбран
+goodsElements.forEach(product => {
+    
+});
+
+document.querySelector(".btn").addEventListener( "click" , () =>
+alert(`Заказчик: ${userName.value} ${userSurname.value}` Итого: '${resultElement.value}'));
+
+    //по клику на кнопку должен появиться alert с текстом
+//(*)для выбравших способ 1 или 2 именно внутри данного события будет происходить подсчет итоговой суммы,
+//вам нужно перебрать все элементы checkbox и input в цикле
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
