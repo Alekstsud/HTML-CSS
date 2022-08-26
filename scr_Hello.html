@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+        <div>
+            <label for="name">Имя:</label>
+            <input id="name"type="text"name="name">
+        </div>
+        <div>
+            <label for="surname">Фамилия:</label>
+            <input id="surname"type="text"name="surname">
+        </div>
+        <div>
+<button class="btn">Отправить</button>
+</div>
+<p>Ответ: <span class="result"></span></p>
+<script>
+    btnElement = document.querySelector(".btn");
+    resultElement = document.querySelector(".result");
+    nameElement = document.querySelector(`[name = "name"]`);
+    surnameElement = document.querySelector(`[name = "surname"]`);
+
+    btnElement.addEventListener("click", function (){
+        resultElement.textContent = `Здравствуйте, ${nameElement.value} ${surnameElement.value}!`;
+    });
+</script>
+</body>
+</html>
